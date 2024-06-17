@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2w1be1lq3vs4"]
+
+[ext_resource type="Script" path="res://code/menu.gd" id="1_o2kyr"]
+[ext_resource type="Texture2D" uid="uid://bbxt2yduvjqfl" path="res://art/logo.png" id="2_rvu53"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2kyr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 567.0
+offset_top = 463.0
+offset_right = 637.0
+offset_bottom = 564.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(615, 369)
+scale = Vector2(1.06164, 1.06164)
+texture = ExtResource("2_rvu53")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq53b7sh0ka3a"]
+
+[ext_resource type="Script" path="res://code/game.gd" id="1_ntmhr"]
+
+[node name="Game" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntmhr")
+label = NodePath("Pixels")
+
+[node name="Pixels" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 54.0
+theme_type_variation = &"HeaderLarge"
+text = "Pixels: <value>
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Generate" type="Button" parent="."]
+custom_minimum_size = Vector2(320, 80)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499132
+anchor_top = 0.904321
+anchor_right = 0.499132
+anchor_bottom = 0.904321
+offset_left = -160.0
+offset_top = -80.0
+offset_right = 160.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Generate"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Generate" to="." method="_on_generate_pressed"]
