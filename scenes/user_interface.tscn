@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpt208h8vpo72"]
+
+[ext_resource type="Script" path="res://code/user_interface.gd" id="1_osryp"]
+[ext_resource type="PackedScene" uid="uid://cmakwlb4xrdkc" path="res://scenes/GeneratePixels.tscn" id="2_s1q8m"]
+[ext_resource type="PackedScene" uid="uid://diyltduluat6k" path="res://scenes/shop.tscn" id="3_a25vv"]
+[ext_resource type="PackedScene" uid="uid://cmm3usxaehjcg" path="res://scenes/scrollingticker.tscn" id="4_rh3a6"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osryp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainView" type="Control" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GeneratePixels" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("2_s1q8m")]
+visible = false
+layout_mode = 1
+user_interface = NodePath("../../..")
+
+[node name="shop" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("3_a25vv")]
+visible = false
+layout_mode = 1
+view = 1
+user_interface = NodePath("../../..")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BottomPanel" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ticker" parent="VBoxContainer/BottomPanel" instance=ExtResource("4_rh3a6")]
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 4.0
+offset_top = 80.0
+offset_right = 1156.0
+offset_bottom = 80.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Navigator" type="Control" parent="VBoxContainer/BottomPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer"]
+layout_mode = 2
+
+[node name="GenPixLink" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Generate Pixel"
+underline = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Shoplink" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Shop"
+underline = 1
+
+[node name="Resources" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resources"
+underline = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/GenPixLink" to="." method="_on_gen_pix_link_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Shoplink" to="." method="_on_shoplink_pressed"]

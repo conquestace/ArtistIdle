@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://diyltduluat6k"]
+
+[ext_resource type="Script" path="res://code/shop.gd" id="1_is36h"]
+
+[node name="shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_is36h")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 158.0
+offset_right = 754.0
+offset_bottom = 439.0
+text = "shop"
