@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://nc2c4va56ti3"]
+
+[ext_resource type="Script" path="res://code/TickerLabel.gd" id="1_byicj"]
+
+[node name="Resources" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pixels" type="Label" parent="."]
+offset_right = 1152.0
+offset_bottom = 54.0
+theme_type_variation = &"HeaderLarge"
+text = "Pixels: <value>
+"
+vertical_alignment = 1
+script = ExtResource("1_byicj")
+
+[node name="GPUs" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 48.0
+offset_right = 1154.0
+offset_bottom = 102.0
+theme_type_variation = &"HeaderLarge"
+text = "GPU: <value>
+"
+vertical_alignment = 1
+script = ExtResource("1_byicj")
+
+[node name="VRAM" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 106.0
+offset_right = 1153.0
+offset_bottom = 160.0
+theme_type_variation = &"HeaderLarge"
+text = "VRAM: <value>
+"
+vertical_alignment = 1
+script = ExtResource("1_byicj")

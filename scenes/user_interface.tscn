@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpt208h8vpo72"]
+[gd_scene load_steps=7 format=3 uid="uid://bpt208h8vpo72"]
 
 [ext_resource type="Script" path="res://code/user_interface.gd" id="1_osryp"]
 [ext_resource type="PackedScene" uid="uid://cmakwlb4xrdkc" path="res://scenes/GeneratePixels.tscn" id="2_s1q8m"]
 [ext_resource type="PackedScene" uid="uid://diyltduluat6k" path="res://scenes/shop.tscn" id="3_a25vv"]
+[ext_resource type="PackedScene" uid="uid://nc2c4va56ti3" path="res://scenes/resources.tscn" id="4_1ef7o"]
 [ext_resource type="PackedScene" uid="uid://cmm3usxaehjcg" path="res://scenes/scrollingticker.tscn" id="4_rh3a6"]
+[ext_resource type="Script" path="res://code/Resources.gd" id="5_xycle"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -31,11 +33,18 @@ visible = false
 layout_mode = 1
 user_interface = NodePath("../../..")
 
-[node name="shop" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("3_a25vv")]
+[node name="Shop" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("3_a25vv")]
 visible = false
 layout_mode = 1
-view = 1
 user_interface = NodePath("../../..")
+view = 1
+
+[node name="Resources" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("4_1ef7o")]
+visible = false
+layout_mode = 1
+script = ExtResource("5_xycle")
+user_interface = NodePath("../../..")
+view = 2
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
@@ -87,7 +96,7 @@ layout_mode = 2
 text = "Shop"
 underline = 1
 
-[node name="Resources" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
+[node name="ResourceLink" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Resources"
 underline = 1
@@ -97,4 +106,4 @@ layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/GenPixLink" to="." method="_on_gen_pix_link_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Shoplink" to="." method="_on_shoplink_pressed"]
-[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Resources" to="." method="_on_resources_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/ResourceLink" to="." method="_on_resources_pressed"]

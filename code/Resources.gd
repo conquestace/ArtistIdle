@@ -1,2 +1,6 @@
 class_name Resources
-extends LinkButton
+extends View
+
+func _ready() -> void:
+	super() ## this is for signaling and views
+	visible = false

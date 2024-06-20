@@ -1,30 +1,19 @@
 class_name GeneratePixel
-extends Control
+extends View
+## Auto generates Pixels
 
 @export var label : Label
 @export var button : Button
 @export var timer : Timer
 
-## for Signalling
-@export var view : UserInterface.Views
-## references to the user interface
-@export var user_interface : UserInterface
-
-
 
 func _ready() -> void:
-	user_interface.navigation_requested.connect(_on_navigation_request)
-	#update_label_text()
+	super() ## this is for signaling and views
 	visible = true
 
 func generate_pixel() -> void:
 	HandlerPixel.ref.trigger_upgrade()
 	
-"""old code
-func update_label_text() -> void:
-	label.text = "Pixels: %s" %HandlerPixel.ref.pixel()
-"""
-
 func begin_generating_pixels() -> void:
 	timer.start()
 	button.disabled = true
@@ -40,11 +29,4 @@ func _on_timer_timeout() -> void:
 
 func _on_generate_pressed():
 	begin_generating_pixels()
-
-## Watches for navigation request and reacts accordingly
-func _on_navigation_request(requested_view : UserInterface.Views) -> void:
-	if requested_view == view:
-		visible = true
-		return
-	visible = false
 

@@ -1,0 +1,40 @@
+{
+	"nodes":[
+		{"id":"a0e15996bb0962dc","x":-238,"y":-230,"width":250,"height":60,"type":"text","text":"Artist Idle"},
+		{"id":"21eb727718e60ae2","x":-238,"y":-78,"width":250,"height":60,"type":"text","text":"Pen -> Brush -> Spray -> Bucket Fill -> Whatever"},
+		{"id":"760cff99b08affce","x":-238,"y":61,"width":250,"height":60,"type":"text","text":"Paintings went to Gallery"},
+		{"id":"c529b90952158da1","x":76,"y":182,"width":250,"height":60,"type":"text","text":"Travel around the world\n"},
+		{"id":"8b307776e58b10ea","x":57,"y":323,"width":250,"height":60,"type":"text","text":"Schools"},
+		{"id":"7faf533ad3e23f39","x":397,"y":318,"width":250,"height":60,"type":"text","text":"Recruit Art Students"},
+		{"id":"532f6916e012c450","x":76,"y":61,"width":250,"height":60,"type":"text","text":"Fame"},
+		{"id":"8c75bf250cbd63de","x":647,"y":-200,"width":250,"height":60,"type":"text","text":"Pixels"},
+		{"id":"431e71912d72eacf","x":522,"y":-108,"width":250,"height":60,"type":"text","text":"GPU"},
+		{"id":"60cc55df3cc17347","x":522,"y":-27,"width":250,"height":60,"type":"text","text":"VRAM"},
+		{"id":"e5397bd2aea19006","x":1200,"y":-340,"width":250,"height":60,"type":"text","text":"Servers?"},
+		{"id":"2ea07668a5b206e5","x":860,"y":-108,"width":250,"height":60,"type":"text","text":"Models"},
+		{"id":"17f4ad94157e5bde","x":1180,"y":-108,"width":250,"height":60,"type":"text","text":"Prompts"},
+		{"id":"cc81351424d29db7","x":800,"y":-260,"width":250,"height":60,"type":"text","text":"AI-rtist AIdle - Ai-artist idle"},
+		{"id":"31396f6827db6a16","x":1075,"y":-230,"width":250,"height":60,"type":"text","text":"Fame"},
+		{"id":"e5a64a4e6babbf58","x":798,"y":119,"width":250,"height":60,"type":"text","text":"Money"}
+	],
+	"edges":[
+		{"id":"8bfccf4f60133dee","fromNode":"a0e15996bb0962dc","fromSide":"bottom","toNode":"21eb727718e60ae2","toSide":"top"},
+		{"id":"60c3bd88d866a251","fromNode":"21eb727718e60ae2","fromSide":"bottom","toNode":"760cff99b08affce","toSide":"top"},
+		{"id":"c868327d0f67c7a1","fromNode":"760cff99b08affce","fromSide":"right","toNode":"532f6916e012c450","toSide":"left"},
+		{"id":"2ad2cfd5937abc24","fromNode":"532f6916e012c450","fromSide":"bottom","toNode":"c529b90952158da1","toSide":"top"},
+		{"id":"c710cb2c5eecf1a8","fromNode":"c529b90952158da1","fromSide":"bottom","toNode":"8b307776e58b10ea","toSide":"top"},
+		{"id":"28784c2622fc1856","fromNode":"8b307776e58b10ea","fromSide":"right","toNode":"7faf533ad3e23f39","toSide":"left"},
+		{"id":"91d845ba0b4a1d9d","fromNode":"8c75bf250cbd63de","fromSide":"bottom","toNode":"431e71912d72eacf","toSide":"top"},
+		{"id":"3487923fdd03239b","fromNode":"431e71912d72eacf","fromSide":"bottom","toNode":"60cc55df3cc17347","toSide":"top"},
+		{"id":"94976565e31633f4","fromNode":"2ea07668a5b206e5","fromSide":"left","toNode":"431e71912d72eacf","toSide":"right"},
+		{"id":"3cd204a2a1bdc8d9","fromNode":"17f4ad94157e5bde","fromSide":"left","toNode":"2ea07668a5b206e5","toSide":"right"},
+		{"id":"ba093be4fcc568bd","fromNode":"431e71912d72eacf","fromSide":"right","toNode":"2ea07668a5b206e5","toSide":"left"},
+		{"id":"52ebd8a95fb59bcf","fromNode":"8c75bf250cbd63de","fromSide":"right","toNode":"31396f6827db6a16","toSide":"left"},
+		{"id":"b690e23c1e18d92d","fromNode":"31396f6827db6a16","fromSide":"bottom","toNode":"2ea07668a5b206e5","toSide":"top"},
+		{"id":"b075e220b65165aa","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"e5a64a4e6babbf58","toSide":"top"},
+		{"id":"109e6abb7b943208","fromNode":"e5a64a4e6babbf58","fromSide":"bottom","toNode":"431e71912d72eacf","toSide":"left"},
+		{"id":"0cd6cf5e2f1efb73","fromNode":"2ea07668a5b206e5","fromSide":"top","toNode":"31396f6827db6a16","toSide":"bottom"},
+		{"id":"0d01f05dd3e80f32","fromNode":"7faf533ad3e23f39","fromSide":"bottom","toNode":"82ea62a454392069","toSide":"top"},
+		{"id":"4fe881df57af542a","fromNode":"7faf533ad3e23f39","fromSide":"right","toNode":"532f6916e012c450","toSide":"right"}
+	]
+}
