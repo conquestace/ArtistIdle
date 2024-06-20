@@ -37,3 +37,9 @@ func consume_pixels(quantity : int) -> Error:
 	pixel_consumed.emit(quantity)
 	
 	return Error.OK
+
+## triggered by the upgrade to generate pixels
+func trigger_upgrade() -> void:
+	var quantity : int = 1
+	quantity += Game.ref.data.up_01_level
+	generate_pixels(quantity)

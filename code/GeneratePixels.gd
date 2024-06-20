@@ -18,7 +18,7 @@ func _ready() -> void:
 	visible = true
 
 func generate_pixel() -> void:
-	HandlerPixel.ref.generate_pixels(1)
+	HandlerPixel.ref.trigger_upgrade()
 	
 """old code
 func update_label_text() -> void:
