@@ -10,7 +10,7 @@ extends Control
 
 
 ## Upgrade to Display
-var upgrade : Up01ClickerUpgrade
+var upgrade : Upgrade
 
 func _ready() -> void:
 	upgrade = Up01ClickerUpgrade.new()

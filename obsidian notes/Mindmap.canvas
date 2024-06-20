@@ -15,7 +15,11 @@
 		{"id":"17f4ad94157e5bde","x":1180,"y":-108,"width":250,"height":60,"type":"text","text":"Prompts"},
 		{"id":"cc81351424d29db7","x":800,"y":-260,"width":250,"height":60,"type":"text","text":"AI-rtist AIdle - Ai-artist idle"},
 		{"id":"31396f6827db6a16","x":1075,"y":-230,"width":250,"height":60,"type":"text","text":"Fame"},
-		{"id":"e5a64a4e6babbf58","x":798,"y":119,"width":250,"height":60,"type":"text","text":"Money"}
+		{"id":"e5a64a4e6babbf58","x":798,"y":119,"width":250,"height":60,"type":"text","text":"Money"},
+		{"id":"7a4ce844eaf02e0a","x":1095,"y":68,"width":250,"height":60,"type":"text","text":"Merge"},
+		{"id":"95267cacd2593932","x":1252,"y":217,"width":250,"height":60,"type":"text","text":"LoRA"},
+		{"id":"93ee2f897c3d1c05","x":1558,"y":217,"width":250,"height":60,"type":"text","text":"DoRA"},
+		{"id":"9abf78f0def5c6e8","x":1430,"y":68,"width":250,"height":60,"type":"text","text":"Base Model"}
 	],
 	"edges":[
 		{"id":"8bfccf4f60133dee","fromNode":"a0e15996bb0962dc","fromSide":"bottom","toNode":"21eb727718e60ae2","toSide":"top"},
@@ -34,7 +38,10 @@
 		{"id":"b075e220b65165aa","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"e5a64a4e6babbf58","toSide":"top"},
 		{"id":"109e6abb7b943208","fromNode":"e5a64a4e6babbf58","fromSide":"bottom","toNode":"431e71912d72eacf","toSide":"left"},
 		{"id":"0cd6cf5e2f1efb73","fromNode":"2ea07668a5b206e5","fromSide":"top","toNode":"31396f6827db6a16","toSide":"bottom"},
-		{"id":"0d01f05dd3e80f32","fromNode":"7faf533ad3e23f39","fromSide":"bottom","toNode":"82ea62a454392069","toSide":"top"},
-		{"id":"4fe881df57af542a","fromNode":"7faf533ad3e23f39","fromSide":"right","toNode":"532f6916e012c450","toSide":"right"}
+		{"id":"4fe881df57af542a","fromNode":"7faf533ad3e23f39","fromSide":"right","toNode":"532f6916e012c450","toSide":"right"},
+		{"id":"cdbe1cb80442f17f","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"7a4ce844eaf02e0a","toSide":"top"},
+		{"id":"f0581166c537bf9d","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"9abf78f0def5c6e8","toSide":"top"},
+		{"id":"6218863d14268a45","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"95267cacd2593932","toSide":"top"},
+		{"id":"c70fffb694b2c0fd","fromNode":"2ea07668a5b206e5","fromSide":"bottom","toNode":"93ee2f897c3d1c05","toSide":"top"}
 	]
 }

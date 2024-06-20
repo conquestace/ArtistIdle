@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cmm3usxaehjcg"]
 
 [ext_resource type="Script" path="res://code/scrollingticker.gd" id="1_sqhw5"]
-[ext_resource type="Script" path="res://code/TickerLabel.gd" id="2_723cf"]
+[ext_resource type="Script" path="res://code/ticker_label.gd" id="2_uni8y"]
 
 [sub_resource type="Animation" id="Animation_ewpd7"]
 length = 0.001
@@ -86,8 +86,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_left = 5.0
 offset_top = 4.0
-offset_right = 11525.0
+offset_right = 12677.0
 offset_bottom = 27.0
 grow_horizontal = 2
 text = "text"
-script = ExtResource("2_723cf")
+script = ExtResource("2_uni8y")

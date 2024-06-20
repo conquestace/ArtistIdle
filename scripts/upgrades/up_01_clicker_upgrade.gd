@@ -1,18 +1,12 @@
 class_name Up01ClickerUpgrade
-extends Node
+extends Upgrade
 ## Upgrade 01 - Increases Pixel Creation Speed
-
-## sends signal when upgrade levels up
-signal leveled_up
-
-var level : int #unlimited levels
-var title : String = "Pixel Speed"
-var base_cost : int = 10
-var cost : int
 
 ## load data
 func _init() -> void:
 	level = Game.ref.data.up_01_level
+	title = "Pixel Speed"
+	base_cost = 10
 	calculate_cost()
 
 func description() -> String:

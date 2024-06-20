@@ -28,10 +28,34 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="HeaderLarge" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Shop
+
+[node name="HeaderLarge" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Shops: 
 "
+
+[node name="Upgrades" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Upgrades"
+underline = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Upgrades2" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Computer Store"
+underline = 1
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Upgrades3" type="LinkButton" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Model Repository"
+underline = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
