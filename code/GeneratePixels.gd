@@ -13,19 +13,17 @@ extends Control
 
 
 func _ready() -> void:
-	update_label_text()
 	user_interface.navigation_requested.connect(_on_navigation_request)
+	#update_label_text()
 	visible = true
 
-func _procress(_delta: float) -> void:
-	update_label_text()
-	
 func generate_pixel() -> void:
-	Game.ref.data.pixels += 1
-	update_label_text()
+	HandlerPixel.ref.generate_pixels(1)
 	
+"""old code
 func update_label_text() -> void:
-	label.text = "Pixels: %s" %Game.ref.data.pixels
+	label.text = "Pixels: %s" %HandlerPixel.ref.pixel()
+"""
 
 func begin_generating_pixels() -> void:
 	timer.start()

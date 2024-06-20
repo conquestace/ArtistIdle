@@ -2,9 +2,10 @@ class_name UserInterface
 extends Control
 ##Main Screen for Artist AIdle.
 
-enum Views {
+enum Views { 
 	GENERATE_PIXELS,
 	SHOP,
+	RESOURCES,
 }
 
 signal navigation_requested(view : Views)
@@ -17,3 +18,6 @@ func _on_gen_pix_link_pressed() -> void:
 func _on_shoplink_pressed() -> void:
 	navigation_requested.emit(Views.SHOP)
 
+
+func _on_resources_pressed() -> void:
+	navigation_requested.emit(Views.RESOURCES)

@@ -97,3 +97,4 @@ layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/GenPixLink" to="." method="_on_gen_pix_link_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Shoplink" to="." method="_on_shoplink_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Resources" to="." method="_on_resources_pressed"]
