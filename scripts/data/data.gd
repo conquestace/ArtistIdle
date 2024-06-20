@@ -5,3 +5,6 @@ extends Resource
 
 ## Current amount of pixels avaliable
 @export var pixels : int = 0
+
+## Upgrades
+@export var up_01_level : int = 0
