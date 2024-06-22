@@ -21,3 +21,9 @@ var data : Data
 func _enter_tree() -> void:
 	_singleton_check()
 	data = Data.new()
+	SaveSystem.load_data()
+	print("Save data loaded")
+
+func _on_save_timer_timeout() -> void:
+	SaveSystem.save_data()
+	print("Data saved")
