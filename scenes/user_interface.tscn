@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpt208h8vpo72"]
+[gd_scene load_steps=8 format=3 uid="uid://bpt208h8vpo72"]
 
 [ext_resource type="Script" path="res://code/user_interface.gd" id="1_osryp"]
 [ext_resource type="PackedScene" uid="uid://cmakwlb4xrdkc" path="res://scenes/GeneratePixels.tscn" id="2_s1q8m"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://nc2c4va56ti3" path="res://scenes/resources.tscn" id="4_1ef7o"]
 [ext_resource type="PackedScene" uid="uid://cmm3usxaehjcg" path="res://scenes/scrollingticker.tscn" id="4_rh3a6"]
 [ext_resource type="Script" path="res://code/Resources.gd" id="5_xycle"]
+[ext_resource type="PackedScene" uid="uid://0pk6t4gqtymh" path="res://views/Fame/fame_view.tscn" id="6_u1mam"]
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -45,6 +46,12 @@ layout_mode = 1
 script = ExtResource("5_xycle")
 user_interface = NodePath("../../..")
 view = 2
+
+[node name="FameView" parent="VBoxContainer/MainView" node_paths=PackedStringArray("user_interface") instance=ExtResource("6_u1mam")]
+visible = false
+layout_mode = 1
+user_interface = NodePath("../../..")
+view = 3
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
@@ -101,9 +108,55 @@ layout_mode = 2
 text = "Resources"
 underline = 1
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/BottomPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/BottomPanel/HBoxContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomPanel/HBoxContainer2/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BottomPanel/HBoxContainer2/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomPanel/HBoxContainer2/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/BottomPanel/HBoxContainer2/Control/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Fame" type="LinkButton" parent="VBoxContainer/BottomPanel/HBoxContainer2/Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fame"
+underline = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/BottomPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/GenPixLink" to="." method="_on_gen_pix_link_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/Shoplink" to="." method="_on_shoplink_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer/Navigator/MarginContainer/HBoxContainer/ResourceLink" to="." method="_on_resources_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomPanel/HBoxContainer2/Control/MarginContainer/HBoxContainer/Fame" to="." method="_on_fame_pressed"]

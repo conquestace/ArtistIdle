@@ -12,4 +12,4 @@ func _ready() -> void:
 	HandlerPixel.ref.pixel_created.connect(update_text)
 
 func update_text(_quantity : int = -1) -> void:
-	text = "Model : %s, GPU : %s, VRAM : %s GB, Pixels : %s" %[model, GPU, VRAM, HandlerPixel.ref.pixel()]
+	text = "Total Pixels: %s, Model : %s, GPU : %s, VRAM : %s GB, Current Pixels : %s, PPS : %s" %[HandlerPixel.ref.total_pixels(), model, GPU, VRAM, HandlerPixel.ref.pixel(), HandlerPixel.ref.pixels_per_second()]

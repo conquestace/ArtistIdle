@@ -5,6 +5,7 @@ extends Upgrade
 ## load data
 func _init() -> void:
 	level = Game.ref.data.up_01_level
+	#level = 0
 	title = "Pixel Speed"
 	base_cost = 10
 	calculate_cost()

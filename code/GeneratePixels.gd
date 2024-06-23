@@ -6,11 +6,10 @@ extends View
 @export var button : Button
 @export var timer : Timer
 
-
 func _ready() -> void:
 	super() ## this is for signaling and views
 	visible = true
-
+	
 func generate_pixel() -> void:
 	HandlerPixel.ref.trigger_upgrade()
 	
@@ -28,5 +27,7 @@ func _on_timer_timeout() -> void:
 
 
 func _on_generate_pressed():
+	#Game.ref.data.pixels = 0
+	#Game.ref.data.up_01_level = 0
 	begin_generating_pixels()
 

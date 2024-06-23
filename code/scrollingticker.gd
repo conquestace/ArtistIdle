@@ -17,8 +17,3 @@ func reset_animation():
 	animation_player.stop
 	ticker_label.rect_min_size = Vector2(ticker_label.font.get_string_size(ticker_label.text).x, ticker_label.rect_min_size.y)
 	animation_player.play("Scroll")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

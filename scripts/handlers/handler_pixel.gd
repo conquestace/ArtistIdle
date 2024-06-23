@@ -21,11 +21,20 @@ signal pixel_consumed(quantity : int)
 ## Returns current amount of pixels avaliable
 func pixel() -> int:
 	return Game.ref.data.pixels
-	
+
+func pixels_per_second() -> int:
+	return Game.ref.data.pixels_per_second
+
+## Returns total amount of pixels avaliable
+func total_pixels() -> int:
+	return Game.ref.data.total_pixels
+
 	
 ## Creates a specific amount of Pixels
 func generate_pixels(quantity : int) -> void:
 	Game.ref.data.pixels += quantity
+	Game.ref.data.total_pixels += quantity
+	Game.ref.data.pixels_per_second = quantity
 	pixel_created.emit(quantity)
 
 ## Consume a specific amount of Pixels

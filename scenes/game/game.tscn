@@ -15,7 +15,7 @@ script = ExtResource("1_morv0")
 script = ExtResource("3_t56y5")
 
 [node name="saveTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 autostart = true
 
 [connection signal="timeout" from="saveTimer" to="." method="_on_save_timer_timeout"]

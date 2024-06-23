@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://nc2c4va56ti3"]
+[gd_scene load_steps=4 format=3 uid="uid://nc2c4va56ti3"]
 
 [ext_resource type="Script" path="res://code/pixel_label.gd" id="1_te4xh"]
+[ext_resource type="Script" path="res://code/total_pixels.gd" id="2_mqkjs"]
+[ext_resource type="Script" path="res://code/Pixels_per_second.gd" id="3_rorm1"]
 
 [node name="Resources" type="Control"]
 layout_mode = 3
@@ -73,3 +75,22 @@ theme_type_variation = &"HeaderLarge"
 text = "Fame: <title>
 "
 vertical_alignment = 1
+
+[node name="Total_Pixels" type="Label" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 4.0
+offset_right = 646.0
+offset_bottom = 27.0
+text = "Total Pixels Generated: Value"
+script = ExtResource("2_mqkjs")
+
+[node name="Pixels_per_second" type="Label" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 26.0
+offset_right = 618.0
+offset_bottom = 49.0
+text = "Pps: <value>
+"
+script = ExtResource("3_rorm1")
