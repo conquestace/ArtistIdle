@@ -1,4 +1,4 @@
-class_name PictureDisplay
+#class_name PictureDisplay
 extends Control
 
 ## View that displays the picture generated through pixels
@@ -16,9 +16,8 @@ func _ready():
 	if noise_image_exists(noise_img_path) == true:
 		noise_image = Image.load_from_file(noise_img_path)
 		var noise_texture = ImageTexture.create_from_image(noise_image)
-		$Noise.texture = noise_texture
+		$TextureRect.texture = noise_texture
 		image = load_image()
-		$Image.texture = ImageTexture.create_from_image(image)
 		available_pixels = Game.ref.data.avaliable_pixels
 	else:
 		image = load_image()
@@ -26,13 +25,11 @@ func _ready():
 		picture_size = Vector2(image.get_width(), image.get_height())
 		noise_image=generate_noise_image(image.get_width(), image.get_height())
 		var noise_texture = ImageTexture.create_from_image(noise_image)
-		$Noise.texture = noise_texture
-		$Image.texture = ImageTexture.create_from_image(image)
+		$TextureRect.texture = noise_texture
 		available_pixels = []
 		for x in range(picture_size.x):
 			for y in range(picture_size.y):
 				available_pixels.append(Vector2(x, y))
-		print("pixels shuffled")
 		available_pixels.shuffle()
 
 
@@ -68,37 +65,25 @@ func generate_noise_image(width,height):
 	
 	for x in range(width):
 		for y in range(height):
-			img.set_pixel(x, y, Color(randf(), randf(), randf())) # Generates noise
-			#img.set_pixel(x,y, Color(0,0,0)) # Black image
+			#img.set_pixel(x, y, Color(randf(), randf(), randf())) # Generates noise
+			img.set_pixel(x,y, Color(0,0,0))
 	#var texture = ImageTexture.create_from_image(img)
 	return img
 
-func erase_pixel(pixel_pos, rect : Rect2):
-	var x_min = int(rect.position.x)
-	var y_min = int(rect.position.y)
-	var x_max = int(rect.end.x)
-	var y_max = int(rect.end.y)
-	
-	for x in range(x_min,x_max):
-		for y in range(y_min, y_max):
-			noise_image.set_pixelv(Vector2(x,y), Color(0,0,0,0))
-
-
 func update_display():
 	var pps = Game.ref.data.pixels_per_second
-	for i in range(pps):
+	for _i in range(pps):
 		if available_pixels.size() > 0:
 			var index = 0
 			var pixel_pos = available_pixels.pop_front()
 		
-			#var color = image.get_pixelv(pixel_pos)
-			var area = Vector2i(16,16)
-			erase_pixel(pixel_pos, Rect2(pixel_pos, area))
+			var color = image.get_pixelv(pixel_pos)
+			noise_image.set_pixelv(pixel_pos, color)
 			available_pixels.erase(index)
-			print(pixel_pos)
+			
 			index += 1
 	texture = ImageTexture.create_from_image(noise_image)
-	$Noise.texture = texture
+	$TextureRect.texture = texture
 		
 func _get_image_files(folder_path: String) -> Array:
 	var dir = DirAccess.open(folder_path)
